@@ -9,17 +9,15 @@ let startTest;
 while (startTest = confirm('Do you want to start the test?')) {
 	let totalAnswer = 0;
 	for (let i = 0; i < listTests.length; i++) {
-		for (let j = 0; j < listTests[i].length; j += 2) {
-			let testQuestion = listTests[i][j];
-			let testAnswer = listTests[i][j + 1];
-			let userAnswer = confirm(testQuestion);
-	
-			if (userAnswer == testAnswer) {
-				alert('Right');
-				totalAnswer += 1;
-			} else {
-				alert('Wrong');
-			}
+		let testQuestion = listTests[i][0];
+		let testAnswer = listTests[i][1];
+		let userAnswer = confirm(testQuestion);
+
+		if (userAnswer == testAnswer) {
+			alert('Right');
+			totalAnswer += 1;
+		} else {
+			alert('Wrong');
 		}
 	}
 	alert('Correct answers: ' + totalAnswer)
