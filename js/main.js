@@ -1,21 +1,21 @@
-let listTests = [
-	['Creator of JS - Brendan Eich?', true],
-	['President of Ukraine - Joe Biden?', false],
-	['Is the planet - round?', true],
+let tests = [
+	{qst: 'Creator of JS - Brendan Eich?', ans: true},
+	{qst: 'President of Ukraine - Joe Biden?', ans: false},
+	{qst: 'Is the planet - round?', ans: true},
 ];
 
 let startTest;
 
 while (startTest = confirm('Do you want to start the test?')) {
 	let totalAnswer = 0;
-	for (let i = 0; i < listTests.length; i++) {
-		let testQuestion = listTests[i][0];
-		let testAnswer = listTests[i][1];
+	for (let key in tests) {
+		let testQuestion = tests[key].qst;
+		let testAnswer = tests[key].ans;
 		let userAnswer = confirm(testQuestion);
 
 		if (userAnswer == testAnswer) {
 			alert('Right');
-			totalAnswer += 1;
+			totalAnswer++;
 		} else {
 			alert('Wrong');
 		}
